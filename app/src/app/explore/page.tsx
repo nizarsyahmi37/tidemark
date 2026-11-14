@@ -1,0 +1,1 @@
+import {Suspense} from 'react';import Builder from '@/components/Builder';export default function Page(){return <Suspense fallback={<main className="shell">Loading question builder…</main>}><Builder/></Suspense>}
