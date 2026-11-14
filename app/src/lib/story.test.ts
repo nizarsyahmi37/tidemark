@@ -1,0 +1,3 @@
+import {describe,it,expect} from 'vitest';import {formatNumber,headlineSentence,conclusionSentences} from './story';import type {AnalysisDoc} from './types';import klang from '../data/klang_valley_rain.json';
+const doc=klang as unknown as AnalysisDoc;
+describe('story helpers',()=>{it('formats readable signed numbers',()=>{expect(formatNumber(1.2,{}, {signed:true})).toBe('+1.2');expect(formatNumber(-0.00001)).toBe('0')});it('writes a plain language headline',()=>{expect(headlineSentence(doc)).toContain('per decade');expect(headlineSentence(doc)).not.toContain('unitless')});it('includes cause and limits in the takeaway',()=>{expect(conclusionSentences(doc).limits).toContain('does not show what caused')})});
