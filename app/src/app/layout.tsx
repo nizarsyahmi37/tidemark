@@ -1,0 +1,3 @@
+import type { Metadata } from 'next'; import './globals.css';import SiteHeader from '@/components/SiteHeader';
+export const metadata:Metadata={title:'Tidemark: read the marks Earth leaves',description:'Ask NASA Earth data a question and know how far to trust the answer.',other:{'ai-assistance':'Code, text and documentation were written with AI assistance (Claude Code, OpenAI Codex, Cursor Agent). See the repository README and /about.'}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><div className="site-frame"><SiteHeader/>{children}<footer className="footer global-footer">NASA POWER data · <a href="/about">Methods and limitations</a></footer></div></body></html>}
