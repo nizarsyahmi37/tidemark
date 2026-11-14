@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tidemark - demo slides</title>
+<meta name="description" content="7-slide demo for the NASA Space Apps Challenge 2026. Prepared with AI assistance (see slide 7).">
+<style>
+:root{--bg:#0b1b19;--bg2:#10302c;--ink:#eaf4f1;--muted:#9fbdb6;--teal:#65c6b5;--teal2:#2b9c8c;--amber:#f0b84b;--blue:#7fb7ff;--card:#12292600;--line:#ffffff1f}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#050e0d;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow:hidden}
+#stage{position:absolute;left:0;top:0;width:1280px;height:720px;transform-origin:0 0}
+.slide{position:absolute;inset:0;width:1280px;height:720px;padding:64px 72px 56px;background:radial-gradient(1100px 600px at 85% -10%,#18463f 0%,transparent 60%),linear-gradient(180deg,var(--bg2),var(--bg));display:none;overflow:hidden}
+.slide.on{display:flex;flex-direction:column}
+.top{position:absolute;left:72px;right:72px;top:28px;display:flex;justify-content:space-between;align-items:center;font-size:15px;color:var(--muted);letter-spacing:.04em}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);letter-spacing:.02em}
+.brand svg{width:26px;height:16px}
+.bar{position:absolute;left:0;bottom:0;height:5px;background:linear-gradient(90deg,var(--teal2),var(--teal));width:calc(var(--p)*100%)}
+.kicker{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:800;margin:34px 0 10px}
+h1{font-size:132px;line-height:.95;letter-spacing:-.045em;margin:0;font-weight:850}
+h2{font-size:54px;line-height:1.06;letter-spacing:-.03em;margin:0 0 22px;font-weight:800;max-width:1000px}
+p{margin:0}.lead{font-size:28px;line-height:1.35;color:#d3e6e1;max-width:900px}
+.muted{color:var(--muted)}.small{font-size:17px}
+.row{display:grid;gap:44px;align-items:center;flex:1;min-height:0}
+.r2{grid-template-columns:5fr 7fr}.r2b{grid-template-columns:7fr 5fr}
+.shot{position:relative}
+.shot img{width:100%;display:block;border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 80px #0008}
+.pin{position:absolute;width:38px;height:38px;border-radius:50%;background:var(--amber);color:#1c1300;font-weight:850;font-size:20px;display:grid;place-items:center;box-shadow:0 0 0 6px #f0b84b33}
+.steps{display:grid;gap:18px;margin-top:8px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;font-size:24px;line-height:1.3}
+.step b{display:block;font-size:26px}.step span.n{width:44px;height:44px;border-radius:50%;background:var(--amber);color:#1c1300;font-weight:850;display:grid;place-items:center;font-size:22px}
+.step.t span.n{background:var(--teal);}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+.card{background:#ffffff0d;border:1px solid var(--line);border-radius:20px;padding:26px 28px;backdrop-filter:blur(2px)}
+.card h3{margin:0 0 10px;font-size:26px;letter-spacing:-.01em}.card ul{margin:0;padding-left:22px;font-size:21px;line-height:1.4}.card li{margin:6px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:22px}
+.stat{border-top:3px solid var(--teal);padding-top:12px}.stat b{display:block;font-size:50px;letter-spacing:-.03em;line-height:1}.stat span{font-size:17px;color:var(--muted)}
+.tag{display:inline-block;padding:6px 16px;border-radius:99px;background:#65c6b524;color:var(--teal);font-weight:700;font-size:19px}
+.todo{background:#f0b84b22;border:1px dashed var(--amber);color:#ffd990;border-radius:8px;padding:1px 10px;font-weight:600}
+.hook-chart{width:100%;background:#ffffff08;border:1px solid var(--line);border-radius:18px;padding:10px}
+.legend{display:flex;gap:26px;margin-top:14px;font-size:19px;flex-wrap:wrap}.legend i{display:inline-block;width:26px;height:6px;border-radius:3px;margin-right:9px;vertical-align:middle}
+.waves{position:absolute;left:0;right:0;bottom:0;height:100%;pointer-events:none}
+.title-cards{display:grid;grid-template-columns:1fr 1.3fr 1.5fr;gap:18px;margin-top:auto}
+.title-cards .card{padding:18px 22px;font-size:19px}.title-cards b{display:block;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.foot{position:absolute;left:72px;right:72px;bottom:20px;display:flex;justify-content:space-between;font-size:14px;color:#7fa39b}
+#hint{position:fixed;right:14px;bottom:10px;font-size:12px;color:#6d908a;z-index:9}
+@media print{
+  html,body{overflow:visible;background:#fff;height:auto}
+  #stage{position:static;transform:none!important;width:auto;height:auto}
+  .slide{display:flex!important;position:relative;break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #hint{display:none}@page{size:1280px 720px;margin:0}
+}
+</style></head><body>
+<div id="stage">
+
+<!-- 1 TITLE -->
+<section class="slide on" data-n="1">
+  <svg class="waves" viewBox="0 0 1280 720" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 528 Q 60 512.0 140 528 T 300 528 Q 380 512.0 460 528 T 620 528 Q 700 512.0 780 528 T 940 528 Q 1020 512.0 1100 528 T 1260 528 Q 1340 512.0 1420 528 T 1580 528" fill="none" stroke="#65c6b5" stroke-opacity="0.38" stroke-width="2"/><path d="M-20 556 Q 90 541.5 140 556 T 300 556 Q 410 541.5 460 556 T 620 556 Q 730 541.5 780 556 T 940 556 Q 1050 541.5 1100 556 T 1260 556 Q 1370 541.5 1420 556 T 1580 556" fill="none" stroke="#65c6b5" stroke-opacity="0.33" stroke-width="2"/><path d="M-20 584 Q 120 571.0 140 584 T 300 584 Q 440 571.0 460 584 T 620 584 Q 760 571.0 780 584 T 940 584 Q 1080 571.0 1100 584 T 1260 584 Q 1400 571.0 1420 584 T 1580 584" fill="none" stroke="#65c6b5" stroke-opacity="0.28" stroke-width="2"/><path d="M-20 612 Q 150 600.5 140 612 T 300 612 Q 470 600.5 460 612 T 620 612 Q 790 600.5 780 612 T 940 612 Q 1110 600.5 1100 612 T 1260 612 Q 1430 600.5 1420 612 T 1580 612" fill="none" stroke="#65c6b5" stroke-opacity="0.22999999999999998" stroke-width="2"/><path d="M-20 640 Q 180 630.0 140 640 T 300 640 Q 500 630.0 460 640 T 620 640 Q 820 630.0 780 640 T 940 640 Q 1140 630.0 1100 640 T 1260 640 Q 1460 630.0 1420 640 T 1580 640" fill="none" stroke="#65c6b5" stroke-opacity="0.18" stroke-width="2"/><path d="M-20 668 Q 210 659.5 140 668 T 300 668 Q 530 659.5 460 668 T 620 668 Q 850 659.5 780 668 T 940 668 Q 1170 659.5 1100 668 T 1260 668 Q 1490 659.5 1420 668 T 1580 668" fill="none" stroke="#65c6b5" stroke-opacity="0.13" stroke-width="2"/><path d="M-20 696 Q 240 689.0 140 696 T 300 696 Q 560 689.0 460 696 T 620 696 Q 880 689.0 780 696 T 940 696 Q 1200 689.0 1100 696 T 1260 696 Q 1520 689.0 1420 696 T 1580 696" fill="none" stroke="#65c6b5" stroke-opacity="0.07999999999999996" stroke-width="2"/></svg>
+  <div class="top"><div class="brand">NASA Space Apps Challenge 2026</div><div>Be An Earth System Trend Detective</div></div>
+  <div class="kicker" style="margin-top:96px">Earth data · honest answers</div>
+  <h1>Tidemark</h1>
+  <p class="lead" style="margin-top:20px;font-size:40px;color:var(--teal);font-weight:700;letter-spacing:-.01em">Read the marks Earth leaves.</p>
+  <p class="lead" style="margin-top:16px">Is that trend real? Ask any place on Earth, and find out in minutes, with NASA data and the evidence to back it up.</p>
+  <div class="title-cards">
+    <div class="card"><b>Team</b>NizarSyahmi37</div>
+    <div class="card"><b>Members</b>Nizar Syahmi bin Nazlan</div>
+    <div class="card"><b>Challenge</b>Be An Earth System Trend Detective · Advanced · Earth Science, Software</div>
+  </div>
+  <div class="foot"><span>Not endorsed by NASA · Built with AI assistance (see slide 7)</span><span></span></div>
+</section>
+
+<!-- 2 PROBLEM -->
+<section class="slide" data-n="2">
+  <div class="top"><div class="brand">Tidemark</div><div>02 / 07</div></div>
+  <div class="kicker">The problem</div>
+  <h2>Same data. Different years. Opposite stories.</h2>
+  <div class="row r2b">
+    <div><svg viewBox="0 0 760 330" role="img" aria-label="Summer haze over Wisconsin 2002 to 2025: falling if you stop at 2012, rising if you start at 2012, flat over the whole record" class="hook-chart">
+<line x1="56" x2="740" y1="267.3" y2="267.3" stroke="#ffffff" stroke-opacity=".08"/><text x="46" y="271.3" text-anchor="end" fill="#8fb3ac" font-size="13">0.2</text><line x1="56" x2="740" y1="173.7" y2="173.7" stroke="#ffffff" stroke-opacity=".08"/><text x="46" y="177.7" text-anchor="end" fill="#8fb3ac" font-size="13">0.3</text><line x1="56" x2="740" y1="80.1" y2="80.1" stroke="#ffffff" stroke-opacity=".08"/><text x="46" y="84.1" text-anchor="end" fill="#8fb3ac" font-size="13">0.4</text><rect x="50.0" y="24" width="309.4" height="262" rx="10" fill="#f0b84b" fill-opacity=".10"/><rect x="347.4" y="24" width="398.6" height="262" rx="10" fill="#7fb7ff" fill-opacity=".10"/>
+<polyline points="56.0,145.0 85.7,189.0 115.5,205.3 145.2,213.9 175.0,197.6 204.7,183.4 234.4,227.1 264.2,192.1 293.9,214.3 323.7,194.5 353.4,228.8 383.1,208.7 412.9,165.4 442.6,147.7 472.3,254.1 502.1,231.2 531.8,146.7 561.6,232.6 591.3,259.7 621.0,106.1 650.8,251.0 680.5,54.8 710.3,154.0 740.0,109.9" fill="none" stroke="#65c6b5" stroke-width="2.5" stroke-linejoin="round"/><circle cx="56.0" cy="145.0" r="3.6" fill="#65c6b5"/><circle cx="85.7" cy="189.0" r="3.6" fill="#65c6b5"/><circle cx="115.5" cy="205.3" r="3.6" fill="#65c6b5"/><circle cx="145.2" cy="213.9" r="3.6" fill="#65c6b5"/><circle cx="175.0" cy="197.6" r="3.6" fill="#65c6b5"/><circle cx="204.7" cy="183.4" r="3.6" fill="#65c6b5"/><circle cx="234.4" cy="227.1" r="3.6" fill="#65c6b5"/><circle cx="264.2" cy="192.1" r="3.6" fill="#65c6b5"/><circle cx="293.9" cy="214.3" r="3.6" fill="#65c6b5"/><circle cx="323.7" cy="194.5" r="3.6" fill="#65c6b5"/><circle cx="353.4" cy="228.8" r="3.6" fill="#65c6b5"/><circle cx="383.1" cy="208.7" r="3.6" fill="#65c6b5"/><circle cx="412.9" cy="165.4" r="3.6" fill="#65c6b5"/><circle cx="442.6" cy="147.7" r="3.6" fill="#65c6b5"/><circle cx="472.3" cy="254.1" r="3.6" fill="#65c6b5"/><circle cx="502.1" cy="231.2" r="3.6" fill="#65c6b5"/><circle cx="531.8" cy="146.7" r="3.6" fill="#65c6b5"/><circle cx="561.6" cy="232.6" r="3.6" fill="#65c6b5"/><circle cx="591.3" cy="259.7" r="3.6" fill="#65c6b5"/><circle cx="621.0" cy="106.1" r="3.6" fill="#65c6b5"/><circle cx="650.8" cy="251.0" r="3.6" fill="#65c6b5"/><circle cx="680.5" cy="54.8" r="3.6" fill="#65c6b5"/><circle cx="710.3" cy="154.0" r="3.6" fill="#65c6b5"/><circle cx="740.0" cy="109.9" r="3.6" fill="#65c6b5"/>
+<line x1="56.0" y1="181.0" x2="353.4" y2="222.6" stroke="#f0b84b" stroke-width="5" stroke-linecap="round" /><line x1="353.4" y1="221.9" x2="740.0" y2="140.8" stroke="#7fb7ff" stroke-width="5" stroke-linecap="round" /><line x1="56.0" y1="199.8" x2="740.0" y2="186.6" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 9" stroke-opacity=".8"/>
+<text x="56.0" y="316" text-anchor="middle" fill="#8fb3ac" font-size="13">2002</text><text x="234.4" y="316" text-anchor="middle" fill="#8fb3ac" font-size="13">2008</text><text x="412.9" y="316" text-anchor="middle" fill="#8fb3ac" font-size="13">2014</text><text x="591.3" y="316" text-anchor="middle" fill="#8fb3ac" font-size="13">2020</text><text x="740.0" y="316" text-anchor="middle" fill="#8fb3ac" font-size="13">2025</text></svg>
+      <div class="legend"><span><i style="background:var(--amber)"></i>2002–2012: falling</span><span><i style="background:var(--blue)"></i>2012–2025: rising</span><span><i style="background:#fff;opacity:.8"></i>whole record: flat</span></div>
+    </div>
+    <div>
+      <div class="steps">
+        <div class="step t"><span class="n">1</span><div><b>Choosing is hard.</b>Hundreds of NASA variables, in many formats.</div></div>
+        <div class="step t"><span class="n">2</span><div><b>One p-value hides the story.</b>The answer flips with the years you pick.</div></div>
+        <div class="step t"><span class="n">3</span><div><b>“Not significant” misleads.</b>It does not mean “nothing is happening”.</div></div>
+      </div>
+      <p class="small muted" style="margin-top:18px">Chart: summer haze (aerosol optical depth) over Wisconsin, MERRA-2, plotted from Tidemark&rsquo;s own example data.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Tidemark</span><span>The challenge asks: what is changing, where, how much, and is it significant?</span></div>
+</section>
+
+<!-- 3 HOW IT WORKS -->
+<section class="slide" data-n="3">
+  <div class="top"><div class="brand">Tidemark</div><div>03 / 07</div></div>
+  <div class="kicker">The experience</div>
+  <h2>Ask a question. Pick a place. Get an answer.</h2>
+  <div class="row r2">
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><b>Ask</b>Start from a plain question, or browse 21 NASA variables.</div></div>
+      <div class="step"><span class="n">2</span><div><b>Place</b>Click the map for a spot, or average a whole area.</div></div>
+      <div class="step"><span class="n">3</span><div><b>Time</b>Any years, any season. Or upload your own monthly data.</div></div>
+      <p class="tag" style="justify-self:start">Live NASA POWER data · no setup</p>
+    </div>
+    <div class="shot"><img src="img/explore-place.jpg" alt="Tidemark's Where step: a map with a selected area around Wisconsin">
+      <div class="pin" style="left:2%;top:30%">1</div><div class="pin" style="left:47%;top:66%">2</div><div class="pin" style="left:50%;top:90%">3</div></div>
+  </div>
+  <div class="foot"><span>Screenshot of the working app</span><span></span></div>
+</section>
+
+<!-- 4 ANSWER -->
+<section class="slide" data-n="4">
+  <div class="top"><div class="brand">Tidemark</div><div>04 / 07</div></div>
+  <div class="kicker">The answer</div>
+  <h2>A plain-language answer first, doubt included.</h2>
+  <div class="row r2b">
+    <div class="shot"><img src="img/answer.jpg" alt="Tidemark's Answer tab: summer air temperature around Wisconsin, 1981 to 2025, with a trend line and plausible range">
+      <div class="pin" style="left:3%;top:58%">1</div><div class="pin" style="left:3%;top:88%">2</div><div class="pin" style="left:90%;top:66%">3</div></div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><b>What changed</b>Rate per decade, in real units.</div></div>
+      <div class="step"><span class="n">2</span><div><b>How sure</b>“Strong” or “Weak or no evidence”: never “no change” by accident.</div></div>
+      <div class="step"><span class="n">3</span><div><b>Plausible range</b>The band shows what the data allow.</div></div>
+      <p class="small muted">Example: summer air temperature, Wisconsin, 1981–2025. No clear long-term change in this dataset.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Screenshot of the working app</span><span></span></div>
+</section>
+
+<!-- 5 STRESS TEST -->
+<section class="slide" data-n="5">
+  <div class="top"><div class="brand">Tidemark</div><div>05 / 07</div></div>
+  <div class="kicker">What makes it different</div>
+  <h2>The stress-test: change the years, watch the answer.</h2>
+  <div class="row r2b">
+    <div class="shot"><img src="img/stress.jpg" alt="Tidemark's stress-test: year sliders, presets and a heatmap of every start and end year">
+      <div class="pin" style="left:3%;top:33%">1</div><div class="pin" style="left:3%;top:42%">2</div><div class="pin" style="left:3%;top:78%">3</div></div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><b>Slide the window</b>See the trend for any start and end year.</div></div>
+      <div class="step"><span class="n">2</span><div><b>Try to cheat</b>“Cherry-pick the biggest rise” shows how easily a trend can be manufactured.</div></div>
+      <div class="step"><span class="n">3</span><div><b>See the whole map</b>Every possible window, and how often they agree.</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Screenshot of the working app</span><span></span></div>
+</section>
+
+<!-- 6 DATA + VALIDITY -->
+<section class="slide" data-n="6">
+  <div class="top"><div class="brand">Tidemark</div><div>06 / 07</div></div>
+  <div class="kicker">NASA data · validity</div>
+  <h2>Built on NASA data. Checked like science.</h2>
+  <div class="cards">
+    <div class="card"><h3>NASA data, live</h3><ul><li>NASA POWER API (Langley Research Center)</li><li>MERRA-2 reanalysis (NASA GMAO)</li><li>CERES / GEWEX SRB sunlight, cloud, aerosol</li></ul></div>
+    <div class="card"><h3>Statistics you can trust</h3><ul><li>Sen&rsquo;s slope + Mann-Kendall</li><li>Seasonal and autocorrelation-aware tests</li><li>Stress-test across every window</li></ul></div>
+    <div class="card"><h3>Made for researchers too</h3><ul><li>Diagnostics for gaps and outliers</li><li>CSV, JSON, charts, citations</li><li>A runnable Python script</li></ul></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>21</b><span>NASA variables, live</span></div>
+    <div class="stat"><b>40 / 40</b><span>series match pymannkendall exactly</span></div>
+    <div class="stat"><b>62</b><span>automated tests</span></div>
+    <div class="stat"><b>0</b><span>accounts or API keys needed</span></div>
+  </div>
+  <p class="small muted" style="margin-top:20px">Honest limits, in the app: reanalysis is not a direct measurement · overlapping windows are descriptive · AOD is not surface air pollution.</p>
+  <div class="foot"><span>Tidemark</span><span></span></div>
+</section>
+
+<!-- 7 IMPACT + CLOSE -->
+<section class="slide" data-n="7">
+  <svg class="waves" viewBox="0 0 1280 720" preserveAspectRatio="none" aria-hidden="true" style="opacity:.55"><path d="M-20 528 Q 60 512.0 140 528 T 300 528 Q 380 512.0 460 528 T 620 528 Q 700 512.0 780 528 T 940 528 Q 1020 512.0 1100 528 T 1260 528 Q 1340 512.0 1420 528 T 1580 528" fill="none" stroke="#65c6b5" stroke-opacity="0.38" stroke-width="2"/><path d="M-20 556 Q 90 541.5 140 556 T 300 556 Q 410 541.5 460 556 T 620 556 Q 730 541.5 780 556 T 940 556 Q 1050 541.5 1100 556 T 1260 556 Q 1370 541.5 1420 556 T 1580 556" fill="none" stroke="#65c6b5" stroke-opacity="0.33" stroke-width="2"/><path d="M-20 584 Q 120 571.0 140 584 T 300 584 Q 440 571.0 460 584 T 620 584 Q 760 571.0 780 584 T 940 584 Q 1080 571.0 1100 584 T 1260 584 Q 1400 571.0 1420 584 T 1580 584" fill="none" stroke="#65c6b5" stroke-opacity="0.28" stroke-width="2"/><path d="M-20 612 Q 150 600.5 140 612 T 300 612 Q 470 600.5 460 612 T 620 612 Q 790 600.5 780 612 T 940 612 Q 1110 600.5 1100 612 T 1260 612 Q 1430 600.5 1420 612 T 1580 612" fill="none" stroke="#65c6b5" stroke-opacity="0.22999999999999998" stroke-width="2"/><path d="M-20 640 Q 180 630.0 140 640 T 300 640 Q 500 630.0 460 640 T 620 640 Q 820 630.0 780 640 T 940 640 Q 1140 630.0 1100 640 T 1260 640 Q 1460 630.0 1420 640 T 1580 640" fill="none" stroke="#65c6b5" stroke-opacity="0.18" stroke-width="2"/><path d="M-20 668 Q 210 659.5 140 668 T 300 668 Q 530 659.5 460 668 T 620 668 Q 850 659.5 780 668 T 940 668 Q 1170 659.5 1100 668 T 1260 668 Q 1490 659.5 1420 668 T 1580 668" fill="none" stroke="#65c6b5" stroke-opacity="0.13" stroke-width="2"/><path d="M-20 696 Q 240 689.0 140 696 T 300 696 Q 560 689.0 460 696 T 620 696 Q 880 689.0 780 696 T 940 696 Q 1200 689.0 1100 696 T 1260 696 Q 1520 689.0 1420 696 T 1580 696" fill="none" stroke="#65c6b5" stroke-opacity="0.07999999999999996" stroke-width="2"/></svg>
+  <div class="top"><div class="brand">Tidemark</div><div>07 / 07</div></div>
+  <div class="kicker">Impact · what&rsquo;s next</div>
+  <h2>Everyone gets to read Earth&rsquo;s tidemarks.</h2>
+  <div class="cards" style="grid-template-columns:1fr 1fr 1fr">
+    <div class="card"><h3>Students</h3><ul><li>Guess, test, doubt</li><li>No jargon needed</li></ul></div>
+    <div class="card"><h3>Researchers</h3><ul><li>Screen any variable in minutes</li><li>Reproducible by design</li></ul></div>
+    <div class="card"><h3>Next</h3><ul><li>MODIS via Giovanni</li><li>Detect opposite-sign regions</li></ul></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1.25fr;gap:22px;margin-top:22px;position:relative">
+    <div class="card"><b style="color:var(--teal);letter-spacing:.14em;font-size:14px;text-transform:uppercase">Try it</b><p style="margin-top:8px;font-size:21px">Live:<br><a style="color:white" href="https://tidemark.nizarsyahmi37.com" target="_blank">https://tidemark.nizarsyahmi37.com</a><br><br>Code:<br><a style="color:white" href="https://github.com/nizarsyahmi37/tidemark" target="_blank">https://github.com/nizarsyahmi37/tidemark</a></p></div>
+    <div class="card"><b style="color:var(--teal);letter-spacing:.14em;font-size:14px;text-transform:uppercase">AI / SI disclosure</b><p style="margin-top:8px;font-size:15.5px;line-height:1.4;color:#cfe3de">Built with AI assistance: Claude (Anthropic, via Claude Code) for research, concept, statistics, tests, interface and docs; OpenAI Codex and Cursor Agent for parts of early builds. Our team: decisions making, design choices, review, final testing and verification. Data: NASA POWER, MERRA-2. Libraries: Next.js, Chart.js, Leaflet, OpenStreetMap, pymannkendall. Not endorsed by NASA.</p></div>
+  </div>
+  <p style="margin-top:30px;font-size:34px;font-weight:750;color:var(--teal);letter-spacing:-.01em;position:relative">Tidemark &middot; Read the marks Earth leaves.</p>
+  <div class="foot"><span>Thank you</span><span></span></div>
+</section>
+
+<div class="bar" id="bar" style="position:fixed"></div>
+</div>
+<div id="hint">← → navigate · F fullscreen · P print / save PDF</div>
+<script>
+(function(){
+  var stage=document.getElementById('stage'), slides=[].slice.call(document.querySelectorAll('.slide')), bar=document.getElementById('bar'), i=0;
+  function fit(){var s=Math.min(innerWidth/1280, innerHeight/720); stage.style.transform='scale('+s+')'; stage.style.left=((innerWidth-1280*s)/2)+'px'; stage.style.top=((innerHeight-720*s)/2)+'px';}
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n)); slides.forEach(function(s,k){s.classList.toggle('on',k===i)}); bar.style.width=((i+1)/slides.length*1280)+'px'; try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+  addEventListener('resize',fit); fit();
+  addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}
+    else if(e.key==='Home')show(0); else if(e.key==='End')show(slides.length-1);
+    else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
+    else if(e.key==='p'||e.key==='P'){print()}
+  });
+  addEventListener('click',function(e){if(e.clientX>innerWidth/2)show(i+1);else show(i-1)});
+  var h=parseInt((location.hash||'').slice(1),10); show(isNaN(h)?0:h-1);
+})();
+</script>
+</body></html>
