@@ -1,0 +1,19 @@
+{
+ "demos": [
+  {
+   "id": "wisconsin_aod",
+   "title": "Is the air over Wisconsin getting smokier?",
+   "subtitle": "Summer aerosol optical depth, 2002-2025"
+  },
+  {
+   "id": "klang_valley_rain",
+   "title": "Is rainfall changing in the Klang Valley?",
+   "subtitle": "Average daily rainfall, Malaysia, 1990-2025"
+  },
+  {
+   "id": "iowa_soil_moisture",
+   "title": "Is the land getting drier in Iowa?",
+   "subtitle": "Root-zone soil wetness in the growing season, 1981-2025"
+  }
+ ]
+}
