@@ -1,0 +1,23 @@
+{
+ "param": "PRECTOTCORR",
+ "start": 1990,
+ "end": 2025,
+ "lats": [
+  2.75,
+  3.25
+ ],
+ "lons": [
+  101.25,
+  101.875
+ ],
+ "bbox": [
+  101.0,
+  2.5,
+  102.2,
+  3.7
+ ],
+ "region": "Klang Valley, Malaysia",
+ "id": "klang_valley_rain",
+ "n_points": 4,
+ "source": "NASA POWER (MERRA-2)"
+}

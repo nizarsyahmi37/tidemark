@@ -1,0 +1,25 @@
+{
+ "param": "GWETROOT",
+ "start": 1981,
+ "end": 2025,
+ "lats": [
+  41.0,
+  42.0,
+  43.0
+ ],
+ "lons": [
+  -95.5,
+  -93.5,
+  -91.5
+ ],
+ "bbox": [
+  -96.6,
+  40.4,
+  -90.1,
+  43.5
+ ],
+ "region": "Iowa, USA",
+ "id": "iowa_soil_moisture",
+ "n_points": 9,
+ "source": "NASA POWER (MERRA-2)"
+}
