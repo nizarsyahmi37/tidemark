@@ -1,0 +1,1 @@
+import {Suspense} from 'react';import Results from '@/components/Results';export default function Page(){return <Suspense fallback={<main className="shell">Preparing results…</main>}><Results/></Suspense>}
