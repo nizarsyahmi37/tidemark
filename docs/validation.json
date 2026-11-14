@@ -1,0 +1,103 @@
+{
+ "crosscheck": {
+  "max_abs_diff": {
+   "mk_p": 0,
+   "mk_S": 0,
+   "slope": 0,
+   "ci_vs_scipy": 0.017732155116406228,
+   "seasonal_p": 0,
+   "seasonal_slope": 0
+  },
+  "n_series": 40,
+  "note": "own MK/Sen/seasonal MK vs pymannkendall; CI diff is relative to scipy.theilslopes CI (iid), small differences expected from rank rounding"
+ },
+ "synthetic": {
+  "known_trend_iid": {
+   "true_slope_per_decade": 0.8,
+   "ar1_phi": 0.0,
+   "reps": 300,
+   "mean_estimate": 0.7988553697917566,
+   "ci_coverage": {
+    "raw": 0.9966666666666667,
+    "deseasonalized": 0.9533333333333334,
+    "seasonal_mk": 0.9533333333333334
+   },
+   "significant_rate": {
+    "raw": 1.0,
+    "deseasonalized": 1.0,
+    "seasonal_mk": 1.0
+   }
+  },
+  "known_trend_ar1": {
+   "true_slope_per_decade": 0.8,
+   "ar1_phi": 0.6,
+   "reps": 300,
+   "mean_estimate": 0.8013099045145153,
+   "ci_coverage": {
+    "raw": 0.88,
+    "deseasonalized": 0.8833333333333333,
+    "seasonal_mk": 0.7333333333333333
+   },
+   "significant_rate": {
+    "raw": 1.0,
+    "deseasonalized": 1.0,
+    "seasonal_mk": 1.0
+   }
+  },
+  "null_iid": {
+   "true_slope_per_decade": 0.0,
+   "ar1_phi": 0.0,
+   "reps": 300,
+   "mean_estimate": 0.0003703001866775124,
+   "ci_coverage": {
+    "raw": 0.9966666666666667,
+    "deseasonalized": 0.9533333333333334,
+    "seasonal_mk": 0.9533333333333334
+   },
+   "significant_rate": {
+    "raw": 0.0033333333333333335,
+    "deseasonalized": 0.04666666666666667,
+    "seasonal_mk": 0.04666666666666667
+   }
+  },
+  "null_ar1": {
+   "true_slope_per_decade": 0.0,
+   "ar1_phi": 0.6,
+   "reps": 300,
+   "mean_estimate": 0.003035142693889239,
+   "ci_coverage": {
+    "raw": 0.88,
+    "deseasonalized": 0.8733333333333333,
+    "seasonal_mk": 0.7333333333333333
+   },
+   "significant_rate": {
+    "raw": 0.12,
+    "deseasonalized": 0.12666666666666668,
+    "seasonal_mk": 0.26666666666666666
+   }
+  },
+  "yearly_series_false_alarm": {
+   "monthly_ar1_0.0": 0.035,
+   "monthly_ar1_0.6": 0.055,
+   "reps": 400,
+   "years": 30
+  }
+ },
+ "verdicts": {
+  "strong_trend": {
+   "robust": 1.0
+  },
+  "no_trend": {
+   "no_clear_trend": 0.79,
+   "window_dependent": 0.21
+  },
+  "late_step": {
+   "window_dependent": 0.9,
+   "no_clear_trend": 0.09,
+   "robust": 0.01
+  },
+  "short_record": {
+   "insufficient": 1.0
+  }
+ }
+}
