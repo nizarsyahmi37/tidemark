@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`export generators > generates a stable runnable Python script 1`] = `
+"# Reproduce Precipitation (bias-corrected) for Klang Valley, Malaysia
+# Request URLs: []
+import pandas as pd
+import pymannkendall as mk
+from scipy.stats import theilslopes
+
+# Save the exported monthly-series.csv beside this script.
+df = pd.read_csv("monthly-series.csv", parse_dates=["date"])
+df = df.dropna(subset=["value"]).sort_values("date")
+months = [1,2,3,4,5,6,7,8,9,10,11,12]
+annual = (df.assign(year=df.date.dt.year, month=df.date.dt.month)
+          .query("month in @months").groupby("year").value.mean().dropna())
+slope, intercept, low, high = theilslopes(annual.values)
+print("years:", len(annual))
+print("slope per decade:", slope * 10)
+print("95% interval per decade:", low * 10, high * 10)
+print("Mann-Kendall:", mk.original_test(annual.values))
+"
+`;
