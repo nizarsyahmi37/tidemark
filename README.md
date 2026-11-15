@@ -1,40 +1,58 @@
+<div align="center">
+
 # Tidemark
 
 **Read the marks Earth leaves.**
 
+Test whether a NASA climate trend is real, how big it is, and how far to trust it.
+
+[**Try the live app**](https://tidemark.nizarsyahmi37.com) ·
+[Demo slides](https://docs.google.com/presentation/d/1cIdttWOFYzX0sEIVTVRjfrsx3bQKf4ENdBRGtGFvoh8/edit?usp=sharing) ·
+[PDF deck](slides/deck.pdf) ·
+[Disclosure](docs/DISCLOSURE.md)
+
 NASA Space Apps Challenge 2026 · _Be An Earth System Trend Detective_
 
-|                       |                                                                                                                                                                                                    |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Live app (try it)** | https://tidemark.nizarsyahmi37.com                                                                                                                                                                 |
-| **Source code**       | https://github.com/nizarsyahmi37/tidemark                                                                                                                                                          |
-| **Demo slides**       | [Google Slides](https://docs.google.com/presentation/d/1cIdttWOFYzX0sEIVTVRjfrsx3bQKf4ENdBRGtGFvoh8/edit?usp=sharing) · [PDF](https://github.com/nizarsyahmi37/tidemark/blob/main/slides/deck.pdf) |
+</div>
 
-A tidemark is the line the water leaves behind: a record that something rose or fell over time. Tidemark reads those marks
-in NASA Earth data and tells you whether a trend is real, how big it is, and how far to trust it.
+---
 
-Choose one of 21 NASA variables (temperature, rainfall, soil wetness, humidity, wind, sunlight, cloud, aerosol, ...), a
-point or area, the years and the season, or upload your own monthly series. Tidemark fetches the data live from the NASA
-POWER API (MERRA-2 and CERES-based fields), then computes:
+## What is Tidemark?
 
-- Sen's slope with a confidence interval, Mann-Kendall, seasonal Mann-Kendall and an autocorrelation-aware test
-- a **stress test** across every start/end-year window, showing whether the answer depends on the years you pick
-- diagnostics (missing data, autocorrelation, unusual years)
-- exports: CSV, JSON, charts, a methods paragraph, citations and a reproducible Python script
+A tidemark is the line the water leaves behind: a record that something rose or fell over time. Tidemark reads those
+marks in NASA Earth data and tells you whether a trend is real, how big it is, and how far to trust it.
 
-## Run it
+Pick a variable, a place and a season, and Tidemark fetches the data live from the
+[NASA POWER API](https://power.larc.nasa.gov/) (MERRA-2 and CERES-based fields). You can also upload your own monthly
+series.
+
+## Features
+
+- **21 NASA variables**: temperature, rainfall, soil wetness, humidity, wind, sunlight, cloud, aerosol and more
+- **Any point or area**, any range of years, any season
+- **Trend statistics**: Sen's slope with a confidence interval, Mann-Kendall, seasonal Mann-Kendall and an
+  autocorrelation-aware test
+- **Stress test**: reruns the analysis over every start/end-year window, so you can see whether the answer depends on
+  the years you pick
+- **Diagnostics**: missing data, autocorrelation and unusual years
+- **Exports**: CSV, JSON, charts, a methods paragraph, citations and a reproducible Python script
+
+## Run it locally
+
+Needs Node 20+ and internet access (NASA POWER). No API keys.
 
 ```bash
 cd app
 npm install
-npm run dev        # http://localhost:3000
-npm test           # statistics parity-tested against the Python reference engine
+npm run dev                    # http://localhost:3000
+```
+
+```bash
+npm test                       # statistics parity-tested against the Python reference engine
 npm run build && npm start     # production
 ```
 
-Needs Node 20+ and internet access (NASA POWER). No API keys.
-
-## What is here
+## Project layout
 
 | Folder         | Contents                                                                                                                                     |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -45,9 +63,15 @@ Needs Node 20+ and internet access (NASA POWER). No API keys.
 | `slides/`      | 7-slide demo (`deck.html`, print to PDF)                                                                                                     |
 | `submission/`  | Drafted answers for the Space Apps project page                                                                                              |
 
-Regenerate the worked examples: `python engine/fetch_data.py && python engine/validate.py && python engine/build_site_data.py`.
+To regenerate the worked examples:
+
+```bash
+python engine/fetch_data.py && python engine/validate.py && python engine/build_site_data.py
+```
 
 ## Data, credits and AI disclosure
 
-See [docs/DISCLOSURE.md](docs/DISCLOSURE.md). Parts of this project (code, documentation, slides) were written with AI
-assistance: Claude Code, OpenAI Codex and Cursor Agent. Data: NASA POWER, MERRA-2. Not endorsed by NASA.
+- **Data:** NASA POWER, MERRA-2. Not endorsed by NASA.
+- **AI assistance:** parts of this project (code, documentation, slides) were written with Claude Code, OpenAI Codex and
+  Cursor Agent.
+- Full details: [docs/DISCLOSURE.md](docs/DISCLOSURE.md)
